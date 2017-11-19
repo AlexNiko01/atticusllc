@@ -1,0 +1,304 @@
+.sr-content {
+  padding: 38px 0;
+  position: relative;
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    width: calc((50% - 1176px / 2) + 1176px * 0.3);
+    bottom: 0;
+    left: 0;
+    background-color: #f9f9f9;
+  }
+}
+
+.sr-title {
+  font-size: 24px;
+  background-color: #7c7c7c;
+  line-height: 1.8;
+  padding: 0 10px;
+  color: #fff;
+  font-weight: 400;
+  div + & {
+    margin-top: 50px;
+  }
+}
+
+.sr-form {
+  font-size: 24px;
+  font-weight: 400;
+  select {
+    margin-top: 30px;
+  }
+}
+
+#top {
+  .sr-form {
+    select {
+      margin-top: 30px;
+      color: #050505;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 100;
+    }
+  }
+  .sr-form-checkbox {
+    padding: 25px 0 25px 0;
+    position: relative;
+    label {
+      display: block;
+      padding: 0 97px 0 63px;
+      background-repeat: no-repeat;
+      background-position: 100% 50%;
+      background-size: 30%;
+      font-size: 24px;
+      font-weight: 400;
+      color: #050505;
+      line-height: 1;
+      position: relative;
+
+    }
+    svg {
+      position: absolute;
+      height: auto;
+      right: 6px;
+      top: 6px;
+      width: 77px;
+    }
+    &:first-of-type {
+      border-bottom: 1px solid #9f9f9f;
+    }
+    &--sec {
+      padding: 17px 0 14px 0;
+      label {
+        padding: 0 97px 0 63px;
+      }
+
+      &:first-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+}
+
+.page-template-template-products {
+  h3 {
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #030303;
+  }
+}
+
+.sr-result {
+
+  &__row {
+    @include flexbox;
+    @include justify-content(space-around);
+    @include align-items(center);
+    min-height: 60px;
+    padding: 0 50px;
+    border-top: solid 1px #97a19e;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  &__item {
+    max-width: 25%;
+    width: 100%;
+    &:nth-child(2) {
+      width: 30%;
+    }
+    &:last-child {
+      width: 92px;
+    }
+
+    img {
+      width: 114px;
+    }
+    &--downloads {
+      background-color: #666d6b;
+      padding: 0 10px;
+      color: #fff;
+      position: relative;
+      .sr-downloads {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #383c3b;
+        width: 100%;
+        z-index: 2;
+        a {
+          display: block;
+          padding: 0 10px;
+        }
+      }
+      &:hover {
+        .sr-downloads {
+          display: block;
+        }
+      }
+    }
+  }
+  &__container {
+    & > a {
+      display: block;
+    }
+    &.insecticide {
+      background-color: rgba(124, 37, 41, 0.1);
+      & .sr-result__header {
+        background-color: #7C2529;
+      }
+    }
+    &.herbicide {
+      background-color: rgba(0, 103, 71, 0.1);
+      & .sr-result__header {
+        background-color: #006747;
+      }
+    }
+    &.fungicide {
+      background-color: rgba(35, 97, 146, 0.1);
+      & .sr-result__header {
+        background-color: #236192;
+      }
+    }
+    & + & {
+      margin-top: 40px;
+    }
+  }
+  &__header {
+    color: #fff;
+    min-height: 0;
+  }
+}
+
+.sr-form-checkbox {
+  label {
+    cursor: pointer;
+    &:after {
+      content: '';
+      width: 18px;
+      height: 9px;
+      position: absolute;
+      top: 50%;
+      margin-top: -5px;
+      left: 17px;
+      border: 5px solid #02b052;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      margin-top: -13px;
+      left: 11px;
+      border: solid 1px #8f8e8e;
+      display: block;
+    }
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    display: none !important;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+
+  &--sec {
+    position: relative;
+    &:after {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      content: '';
+      right: 60px;
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      top: 50%;
+    }
+  }
+  &--insecticide {
+    &:after {
+      background-color: #7C2529;
+    }
+  }
+  &--herbicide {
+    &:after {
+      background-color: #006747;
+    }
+  }
+  &--fungicide {
+    &:after {
+      background-color: #236192;
+    }
+  }
+}
+
+.sr-form-container {
+  position: relative;
+}
+
+.sr-loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 1180px) {
+  .sr-content:before {
+    width: 31%;
+  }
+}
+
+@media (max-width: 991px) {
+  .sr-content:before {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .sr-result {
+    &__row {
+      @include flex-wrap(wrap);
+      text-align: center;
+      padding-top: 20px;
+    }
+    &__item {
+      max-width: 100%;
+      width: 100%;
+      &:nth-child(2) {
+        max-width: 100%;
+      }
+    }
+    &__header {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .responsive #socket .sub_menu_socket {
+    display: none;
+  }
+}
